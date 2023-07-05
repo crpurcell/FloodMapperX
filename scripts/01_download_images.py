@@ -233,6 +233,9 @@ def main(session_code: str,
          force_s2cloudless: bool = True,
          grid_name_filter: str = ""):
 
+    # Initialise the earth engine connection
+    ee.Initialize()
+
     # Only download reference data if given reference dates
     do_download_ref = True
     if  ref_start_date is None or ref_end_date is None:
